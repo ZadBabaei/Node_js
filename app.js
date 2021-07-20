@@ -1,11 +1,13 @@
-let calc = require('./calc.js')
+const mysql = require('mysql');
 
-let addition =calc.add(8,12)
-let subtract =calc.sub(13,17)
-let multiply= calc.multi(18,32)
-let division = calc.div(54,12)
+const con = mysql.createConnection({
+  host: "127.0.0.1",
+  user: "root",
+  password: "6391"
+});
 
-console.log("the output is:"+ addition)
-console.log("the output is:"+ subtract)
-console.log("the output is:"+ multiply)
-console.log("the output is:"+ division)
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
